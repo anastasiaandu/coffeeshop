@@ -1,0 +1,180 @@
+@use './partials/global' as *;
+@use './partials/colors';
+@use './partials/mixins';
+
+
+.hero {
+    background-color: colors.$nitro-pink;
+    padding: 1.25rem 3rem;
+
+    &__text {
+        @include mixins.hero-display;
+        padding: 5rem;
+    }
+
+    &__image {
+        @include mixins.hero-display;
+        text-align: right;
+    }
+}
+
+.coffee-source {
+    width: 80%;
+    text-align: left;
+    padding-bottom: 2.5rem;
+}
+
+.button {
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 400;
+    border: none;
+    color: colors.$white;
+    background-color: colors.$nitro-blue;
+    min-width: 11.25rem;
+    max-width: 80%;
+    padding: 1rem 3rem;
+}
+
+.view-button {
+    margin: 1.25rem auto;
+}
+
+.cards{
+    @include mixins.display-center;
+}
+
+.card {
+    @include mixins.display-space;
+    flex-direction: column;
+    vertical-align: bottom;
+    text-align: center;
+    background-color: colors.$white;
+    min-width: 22rem;
+    max-width: 25rem;
+    min-height: 27.5rem;
+    max-height: 28.8rem;
+    padding-top: 1rem;
+    margin: 3rem;
+    border-radius: 0.6rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 5px 5px;
+
+    &-image {
+        margin-top: 1rem;
+    }
+
+    &-name {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: colors.$nitro-pink;
+        border-bottom-left-radius: 0.6rem;
+        border-bottom-right-radius: 0.6rem;
+        padding: 2.5rem 1.5rem;
+    }
+
+    &-name__details {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.products {
+    text-align: center;
+    background-color: colors.$light-gray;
+    padding: 3rem 5rem;
+
+    &-name {
+        width: 100%;
+    }
+
+    &-details {
+        color: colors.$gray;
+    }
+
+    &-image {
+        min-height: 15rem;
+        max-height: 34rem;
+    }
+}
+
+.price {
+    color: colors.$nitro-blue;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0;                                                  
+}
+
+.discount {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding: 7rem 5rem 10rem 5rem;
+
+    &-image {
+        display: flex;
+        justify-content: center;
+        width: 35%;
+        padding: 5rem 0;
+        background-image: url(../assets/images/coldbrewbackground.png);
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+.source {
+    @include mixins.display-space;
+    width: 90%;
+
+    &-information {
+        width: 50%;
+    }
+
+    &-description {
+        margin: 1rem 0 3rem 0;
+        width: 80%;
+    }
+
+    &-images {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+    }
+}
+
+.promo {
+    color: colors.$white;
+    background-color: colors.$graphite;
+    font-size: 2.8rem;
+    font-weight: 400;
+    min-width: 90%;
+    max-width: 100%;
+    text-align: center;
+    padding: 2.5rem;
+    margin-top: 10rem;
+
+    &-code {
+        font-weight: 700;
+    }
+}
+
+.days {
+    font-weight: 700;
+}
+
+.site-footer {
+    background-color: colors.$nitro-pink;
+    padding: 0 6.5rem;
+}
+
+.footer__heading--size {
+    margin: 1.25rem 1.25rem 1.25rem 0;
+    font-weight: 400;
+}
+
+.footer__heading--information {
+    display: inline-block;
+    padding: 2.5rem;
+    margin-right: 8rem;
+}

@@ -1,0 +1,15 @@
+@mixin display-space {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin display-center {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin hero-display {
+    display: inline-block;
+    vertical-align: middle;
+    width: 45%;
+}

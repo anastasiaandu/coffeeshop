@@ -1,5 +1,9 @@
+@use './partials/global' as *;
+@use './partials/colors';
+
+
 .hero {
-    background-image: url("../assets/coffee-circle.jpg");
+    background-image: url("../assets/images/coffee-circle.jpg");
     background-position: center;
     background-size: cover;
     height: 80vh;
@@ -13,8 +17,8 @@
     max-width: 20%;
     min-height: 35%;
     max-height: 40%;
-    color: #FFF;
-    background-color: #393939;
+    color: colors.$white;
+    background-color: colors.$graphite;
     margin: auto;
     display: flex;
     justify-content: center;
@@ -22,13 +26,13 @@
 }
 
 .sub-nav-link a {
-    color: #FFF;
-    border-left: 4px solid #5BACC3;
+    color: colors.$white;
+    border-left: 4px solid colors.$nitro-blue;
     padding: 0 0 0 2rem;
 }
 
 .options {
-    background-color: #393939;
+    background-color: colors.$graphite;
     min-height: 3.75rem;
     max-height: 5rem;
     padding: 1.25rem
@@ -44,11 +48,11 @@
 
 .one, 
 .three {
-    background-color: #FFF0ED;
+    background-color: colors.$nitro-pink;
 }
 
 .two {
-    background-color: #F7F7F7;
+    background-color: colors.$light-gray;
 }
 
 .description {
@@ -59,6 +63,6 @@
 }
 
 .price {
-    color: #5BACC3;
+    color: colors.$nitro-blue;
     padding-bottom: 2rem;
 }

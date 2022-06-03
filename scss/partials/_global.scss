@@ -1,3 +1,7 @@
+@use 'colors';
+@use 'mixins';
+
+
 body {
     font-family: 'Open Sans';
     font-weight: 400;
@@ -13,18 +17,16 @@ body {
 }
 
 .site-header {
-    background-color: #FFF0ED;
+    background-color: colors.$nitro-pink;
     padding: 1.5rem .5rem .5rem .5rem;
 }
 
 .main-nav {
-    display: flex;
-    justify-content: space-between;
-}
+    @include mixins.display-space;
 
-.main-nav__logo-brand {
-    display: flex;
-    align-items: center;
+    &__logo-brand {
+        @include mixins.display-center;
+    }
 }
 
 .nav-link {
@@ -33,17 +35,17 @@ body {
 }
 
 .shop-now {
-    color: #5BACC3;
+    color: colors.$nitro-blue;
 }
 
 .logo {
     min-width: 3.1rem;
     max-width: 7.5rem;
-}
 
-.logo-discount {
-    width: 2rem;
-    height: 3rem;
+    &-discount {
+        width: 2rem;
+        height: 3rem;
+    }
 }
 
 li {
