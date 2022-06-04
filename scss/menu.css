@@ -25,10 +25,14 @@ body {
   display: flex;
   justify-content: center;
 }
+.main-nav__wordmark {
+  display: flex;
+}
 
 .nav-link {
   display: flex;
   align-items: center;
+  text-transform: uppercase;
 }
 
 .shop-now {
@@ -106,12 +110,14 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-transform: uppercase;
 }
 
 .sub-nav-link a {
   color: #FFF;
   border-left: 4px solid #5BACC3;
   padding: 0 0 0 2rem;
+  text-transform: uppercase;
 }
 
 .options {
