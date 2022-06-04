@@ -26,6 +26,10 @@
     text-transform: uppercase;
 }
 
+.sub-nav-link {
+    margin-top: 0.5rem;
+}
+
 .sub-nav-link a {
     color: colors.$white;
     border-left: 4px solid colors.$nitro-blue;
@@ -67,4 +71,5 @@
 .price {
     color: colors.$nitro-blue;
     padding-bottom: 2rem;
+    margin-bottom: 0;
 }
