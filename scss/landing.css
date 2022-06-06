@@ -1,11 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Open Sans";
   font-weight: 400;
   margin: 0;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 .site-header {
@@ -22,29 +22,49 @@ body {
   display: flex;
   justify-content: center;
 }
-.main-nav__wordmark {
+.main-nav__link {
   display: flex;
 }
-
-.nav-link {
+.main-nav__list {
   display: flex;
   align-items: center;
   text-transform: uppercase;
   margin-top: 1rem;
   margin-bottom: 0;
 }
-
-.shop-now {
+.main-nav__shop-now {
   color: #5BACC3;
+}
+.main-nav__brand {
+  font-size: 3rem;
+  font-weight: 300;
+  margin-right: 1.25rem;
+  padding: 0;
+  margin-top: 1rem;
+  margin-bottom: 0;
 }
 
 .logo {
   min-width: 3.1rem;
   max-width: 7.5rem;
 }
-.logo-discount {
+.logo--discount {
   width: 2rem;
   height: 3rem;
+}
+.logo--one {
+  width: 7.5rem;
+  position: absolute;
+  top: 1rem;
+  left: -2rem;
+  opacity: 0.25;
+}
+.logo--two {
+  width: 7.5rem;
+  position: absolute;
+  bottom: 1rem;
+  right: -2rem;
+  opacity: 0.25;
 }
 
 li {
@@ -85,15 +105,45 @@ h3 {
   margin-bottom: 0;
 }
 
-.brand {
-  font-size: 3rem;
-  font-weight: 300;
-  margin-right: 1.25rem;
-  padding: 0;
-  margin-top: 1rem;
-  margin-bottom: 0;
+@-webkit-keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes flash {
+  0% {
+    background-color: #393939;
+  }
+  50% {
+    background-color: #5BACC3;
+  }
+  100% {
+    background-color: #393939;
+  }
+}
+@keyframes flash {
+  0% {
+    background-color: #393939;
+  }
+  50% {
+    background-color: #5BACC3;
+  }
+  100% {
+    background-color: #393939;
+  }
+}
 .hero {
   background-color: #FFF0ED;
   padding: 1.25rem 3rem;
@@ -110,37 +160,67 @@ h3 {
   width: 45%;
   text-align: right;
 }
-
-.coffee-source {
+.hero__coffee-source {
   width: 80%;
   text-align: left;
   padding-bottom: 2.5rem;
 }
 
-.button {
-  display: inline-block;
+.button-color {
+  min-width: 14rem;
+  max-width: 15rem;
+  min-height: 4rem;
+  max-height: 5rem;
+  background-color: #5BACC3;
+  position: absolute;
+}
+.button-color__learn {
+  width: 95%;
+}
+
+.button-container {
+  min-width: 14rem;
+  max-width: 15rem;
+  min-height: 4rem;
+  max-height: 5rem;
+  position: relative;
+}
+.button-container--view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem auto 1.25rem auto;
+}
+.button-container--learn {
+  margin-top: 3rem;
+}
+
+.button-text {
   font-size: 1.3rem;
   font-weight: 400;
-  border: none;
   color: #FFF;
-  background-color: #5BACC3;
-  min-width: 11.25rem;
-  max-width: 80%;
   padding: 1rem 3rem;
   text-transform: uppercase;
+  min-width: 14rem;
+  max-width: 15rem;
+  min-height: 4rem;
+  max-height: 5rem;
+  border: 2px solid #393939;
+  position: absolute;
+  top: -0.3rem;
+  left: -0.3rem;
+  transition: transform;
+}
+.button-text:active {
+  transform: translate(0.3rem, 0.3rem);
 }
 
-.view-button {
-  margin: 1.25rem auto;
-}
-
-.cards {
+.products {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
-
-.card {
+.products__card {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -156,10 +236,10 @@ h3 {
   border-radius: 0.6rem;
   box-shadow: rgba(0, 0, 0, 0.25) 0 5px 5px;
 }
-.card-image {
-  margin-top: 1rem;
+.products__card-image {
+  margin-top: 0;
 }
-.card-name {
+.products__card-name {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -168,49 +248,63 @@ h3 {
   border-bottom-right-radius: 0.6rem;
   padding: 2.5rem 1.5rem;
 }
-.card-name__details {
+.products__card-details {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-
-.products {
-  text-align: center;
-  background-color: #F7F7F7;
-  padding: 3rem 5rem;
-}
-.products-name {
-  width: 100%;
-}
-.products-details {
-  color: #909090;
-}
-.products-image {
-  min-height: 15rem;
-  max-height: 34rem;
-}
-
-.price {
+.products__card-price {
   color: #5BACC3;
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0;
 }
 
+.main {
+  text-align: center;
+  background-color: #F7F7F7;
+  padding: 3rem 5rem;
+}
+.main-name {
+  width: 100%;
+}
+.main-details {
+  color: #909090;
+}
+.main-image {
+  min-height: 15rem;
+  max-height: 34rem;
+}
+
 .discount {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 7rem 5rem 10rem 5rem;
+  padding: 7rem 5rem 0rem 5rem;
 }
-.discount-image {
+.discount__image-container {
+  width: 35%;
+  position: relative;
+}
+.discount__image {
   display: flex;
   justify-content: center;
-  width: 35%;
   padding: 5rem 0;
   background-image: url("../assets/images/coldbrewbackground.png");
   background-position: center;
   background-size: cover;
+}
+.discount__image:hover .discount__tilted-can {
+  -webkit-animation: spin 2s linear infinite;
+          animation: spin 2s linear infinite;
+}
+.discount__border {
+  width: 100%;
+  height: 100%;
+  border: 5px solid #5BACC3;
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
 }
 
 .source {
@@ -218,14 +312,14 @@ h3 {
   justify-content: space-between;
   width: 90%;
 }
-.source-information {
+.source__information {
   width: 50%;
 }
-.source-description {
+.source__description {
   margin: 1rem 0 3rem 0;
   width: 80%;
 }
-.source-images {
+.source__images {
   display: flex;
   justify-content: space-between;
   width: 80%;
@@ -240,28 +334,33 @@ h3 {
   max-width: 100%;
   text-align: center;
   padding: 2.5rem;
-  margin-top: 10rem;
+  margin: 10rem;
+  -webkit-animation: flash 2.5s linear infinite;
+          animation: flash 2.5s linear infinite;
 }
-.promo-code {
+.promo__code {
   font-weight: 700;
 }
 
-.days {
-  font-weight: 700;
-}
-
-.site-footer {
+.footer {
   background-color: #FFF0ED;
+  display: flex;
+  justify-content: center;
   padding: 0 6.5rem;
+  position: relative;
 }
-
-.footer__heading--size {
+.footer__heading-size {
   margin: 1.25rem 1.25rem 1.25rem 0;
   font-weight: 400;
 }
-
-.footer__heading--information {
+.footer__heading-information {
   display: inline-block;
   padding: 2.5rem;
-  margin-right: 8rem;
+  margin-right: 3rem;
+}
+.footer__days {
+  font-weight: 700;
+}
+.footer__social {
+  margin-bottom: 2.2rem;
 }/*# sourceMappingURL=landing.css.map */

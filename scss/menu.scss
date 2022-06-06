@@ -10,66 +10,86 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
 
-.menu {
-    min-width: 20%;
-    max-width: 20%;
-    min-height: 35%;
-    max-height: 40%;
-    color: colors.$white;
-    background-color: colors.$graphite;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-}
+    &__menu-color {
+        min-width: 17.5rem;
+        max-width: 18.75rem;
+        min-height: 11.25rem;
+        max-height: 12.5rem;
+        background-color: colors.$graphite;
+        position: absolute;
+    }
 
-.sub-nav-link {
-    margin-top: 0.5rem;
-}
+    &__menu-container {
+        min-width: 17.5rem;
+        max-width: 18.75rem;
+        min-height: 11.25rem;
+        max-height: 12.5rem;
+        position: relative;
+    }
 
-.sub-nav-link a {
-    color: colors.$white;
-    border-left: 4px solid colors.$nitro-blue;
-    padding: 0 0 0 2rem;
-    text-transform: uppercase;
+    &__menu-text {
+        color: colors.$white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        text-align: center;
+        min-width: 17.5rem;
+        max-width: 18.75rem;
+        min-height: 11.25rem;
+        max-height: 12.5rem;
+        border: 5px solid colors.$nitro-blue;
+        position: absolute;
+        top: -0.75rem;
+        left: -0.75rem;
+    }
 }
 
 .options {
     background-color: colors.$graphite;
     min-height: 3.75rem;
     max-height: 5rem;
-    padding: 1.25rem
-}
-
-.one,
-.two,
-.three,
-.menu,
-.options {
+    padding: 1.25rem;
     text-align: center;
+
+    &__sub-nav-link {
+        margin-top: 0.5rem;
+    }
+
+    &__sub-nav-list {
+        color: colors.$white;
+        border-left: 4px solid colors.$nitro-blue;
+        padding: 0 0 0 2rem;
+        text-transform: uppercase;
+    }
 }
 
-.one, 
-.three {
-    background-color: colors.$nitro-pink;
-}
-
-.two {
-    background-color: colors.$light-gray;
-}
-
-.description {
-    width: 35%;
+.section {
     text-align: center;
-    font-style: italic;
-    margin: auto;
-}
 
-.price {
-    color: colors.$nitro-blue;
-    padding-bottom: 2rem;
-    margin-bottom: 0;
+    &--one {
+        background-color: colors.$nitro-pink;
+    }
+
+    &--two {
+        background-color: colors.$light-gray;
+    }
+
+    &--three {
+        background-color: colors.$nitro-pink;
+    }
+
+    &__description {
+        width: 35%;
+        text-align: center;
+        font-style: italic;
+        margin: auto;
+    }
+
+    &__price {
+        color: colors.$nitro-blue;
+        padding-bottom: 2rem;
+        margin-bottom: 0;
+    }
 }

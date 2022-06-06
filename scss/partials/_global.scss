@@ -2,19 +2,14 @@
 @use 'mixins';
 
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Open Sans';
     font-weight: 400;
     margin: 0;
-}
-
-// * {
-//     margin: 0;
-//     padding: 0;
-// }
-
-* {
-    box-sizing: border-box;
 }
 
 .site-header {
@@ -30,30 +25,55 @@ body {
         @include mixins.display-center;
     }
 
-    &__wordmark {
+    &__link {
         display: flex;
     }
-}
 
-.nav-link {
-    display: flex;
-    align-items: center;
-    text-transform: uppercase;
-    margin-top: 1rem;
-    margin-bottom: 0;
-}
+    &__list {
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        margin-top: 1rem;
+        margin-bottom: 0;
+    }
 
-.shop-now {
-    color: colors.$nitro-blue;
+    &__shop-now {
+        color: colors.$nitro-blue;
+    }
+
+    &__brand {
+        font-size: 3rem;
+        font-weight: 300;
+        margin-right: 1.25rem;
+        padding: 0;
+        margin-top: 1rem;
+        margin-bottom: 0;
+    }
 }
 
 .logo {
     min-width: 3.1rem;
     max-width: 7.5rem;
 
-    &-discount {
+    &--discount {
         width: 2rem;
         height: 3rem;
+    }
+
+    &--one {
+        width: 7.5rem;
+        position: absolute;
+        top: 1rem;
+        left: -2rem;
+        opacity: 0.25;
+    }
+    
+    &--two {
+        width: 7.5rem;
+        position: absolute;
+        bottom: 1rem;
+        right: -2rem;
+        opacity: 0.25;
     }
 }
 
@@ -92,14 +112,5 @@ h3 {
     font-size: 2.1rem;
     font-weight: 300;
     margin-top: 0;
-    margin-bottom: 0;
-}
-
-.brand {
-    font-size: 3rem;
-    font-weight: 300;
-    margin-right: 1.25rem;
-    padding: 0;
-    margin-top: 1rem;
     margin-bottom: 0;
 }

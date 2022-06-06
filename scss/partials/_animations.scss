@@ -1,0 +1,27 @@
+@use 'colors';
+
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes flash {
+    0% {
+        background-color: colors.$graphite;
+    }
+
+    50% {
+        background-color: colors.$nitro-blue;
+    }
+
+    100% {
+        background-color: colors.$graphite;
+    }
+}
